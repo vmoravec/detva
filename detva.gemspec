@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "sinatra", "~> 1.4"
   spec.add_dependency "sprockets", "~> 3.0"
   spec.add_dependency "tubesock", "~> 0.2"
+  spec.add_dependency "puma"
 end
