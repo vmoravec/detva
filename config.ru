@@ -13,4 +13,6 @@ require "logger"
 logger = Logger.new(STDOUT)
 use Rack::CommonLogger, logger if ENV["RACK_ENV"] == "production"
 
+Detva.root = __dir__
+
 run Rack::Cascade.new [Main, Assets, Api]

@@ -1,10 +1,14 @@
+require "sprockets"
+
 class Assets < Sinatra::Base
   set :environment, Sprockets::Environment.new(__dir__)
+  set :root, Detva.root
 
   configure do
-    environment.append_path "assets/javascripts"
-    environment.append_path "assets/stylesheets"
-    environment.append_path "assets/images"
+    environment.append_path "#{root}/assets/javascripts"
+    environment.append_path "#{root}/assets/stylesheets"
+    environment.append_path "#{root}/assets/images"
+    environment.css_compressor = :scss
   end
 
   helpers do
@@ -14,6 +18,6 @@ class Assets < Sinatra::Base
   end
 
   get "/assets" do
-    environment['application.js']
+    environment["jquery-2.1.3.min.js"].to_s
   end
 end

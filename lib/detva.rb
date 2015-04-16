@@ -1,5 +1,7 @@
 require "detva/version"
 
 module Detva
-  # Your code goes here...
+  class << self
+    attr_accessor :root
+  end
 end
