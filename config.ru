@@ -1,5 +1,16 @@
-require ::File.expand_path('../config/environment', __FILE__)
+$LOAD_PATH.unshift File.expand_path("../app", __FILE__)
+$LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 
-app = Proc.new { |env| ['200', {"Content-Type" => "text/html"}, ["Hello Detva!"]] }
+require_relative "config/environment"
 
-run app
+require "detva"
+require "main"
+require "assets"
+require "api"
+
+require "logger"
+
+logger = Logger.new(STDOUT)
+use Rack::CommonLogger, logger if ENV["RACK_ENV"] == "production"
+
+run Rack::Cascade.new [Main, Assets, Api]
