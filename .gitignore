@@ -9,7 +9,5 @@
 /tmp/
 /vendor
 *.bundle
-*.so
-*.o
-*.a
-mkmf.log
+
+/public/assets

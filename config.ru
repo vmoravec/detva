@@ -5,7 +5,7 @@ require_relative "config/environment"
 
 require "detva"
 
-Detva.root = __dir__
+Detva.root = Pathname.new(__dir__)
 
 require "main"
 require "assets"

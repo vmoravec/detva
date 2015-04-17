@@ -19,4 +19,14 @@ class Assets < Sinatra::Base
     settings.assets.call(env)
   end
 
+  def self.precompile
+    loose_app_assets = Proc.new do |path, filename|
+      filename !~ %r~app/assets~  && !%w[.js .css].include?(File.extname(path))
+    end
+    precompile = [loose_app_assets, /(?:\/|\\|\A)application\.(css|js)$/]
+    settings.assets.each_logical_path(*precompile).each do |path|
+        settings.assets[path].write_to settings.root.join("public", "assets", path)
+    end
+  end
+
 end
