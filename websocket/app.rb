@@ -10,7 +10,7 @@ class WebsocketServer < Sinatra::Base
       sock = Tubesock.hijack(env)
       yield sock
       sock.listen
-      [ -1, {}, [] ]
+      [ 200, {}, [] ]
     end
   end
 
@@ -24,5 +24,6 @@ class WebsocketServer < Sinatra::Base
         ws.send_data(message: "You said #{data}")
       end
     end
+    [ 200, {}, [] ]
   end
 end
