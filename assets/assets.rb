@@ -12,6 +12,7 @@ class Assets < Sinatra::Base
     assets.append_path "#{dir}/images"
     assets.append_path "#{dir}/fonts"
     assets.css_compressor = :scss
+    assets.register_engine '.jst', Sprockets::JstProcessor, mime_type: 'application/javascript'
   end
 
   get '/assets/*' do

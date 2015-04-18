@@ -1,4 +1,5 @@
 require "detva/version"
+require "pathname"
 
 module Detva
   class << self
