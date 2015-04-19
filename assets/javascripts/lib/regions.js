@@ -9,7 +9,7 @@ Detva.Regions = {
     var region = this.cache[region_id];
     if ( region ) return region;
 
-    region = new App.Lib.Region(region_id);
+    region = new Detva.Region(region_id);
     this.cache[region_id] = region;
     return region;
   },
@@ -23,7 +23,6 @@ Detva.Regions = {
   },
 
   clear: function() {
-    var cache = this.cache;
     _.each(this.all(), function(region) {
       region.clear();
       region.destroy();

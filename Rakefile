@@ -8,8 +8,9 @@ require "detva"
 
 Detva.root = Pathname.new(__dir__)
 
-require "main"
-require "assets"
+require_relative "app/app"
+require_relative "assets/assets"
+require_relative "api/api"
 
 RSpec::Core::RakeTask.new
 

@@ -88,6 +88,7 @@ Detva.View = Backbone.View.extend({
   },
 
   _render_template: function() {
+    console.log(this.template);
     console.log(Detva.config.templates_path + this.template);
     this.$el.html(JST[Detva.config.templates_path + this.template]({view: this}));
   },

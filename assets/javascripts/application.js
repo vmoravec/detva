@@ -2,6 +2,10 @@
 //= require vendor/bootstrap.min
 //= require vendor/underscore.min
 //= require vendor/backbone.min
+//= require vendor/backbone.stickit
+//= require vendor/backbone.trackit
+//= require vendor/ladda
+//= require vendor/spin
 
 //= require lib/detva
 //= require lib/view
@@ -16,6 +20,5 @@
 //= require_tree ./application/models
 //= require_tree ./application/collections
 //= require_tree ./application/views
-//= require_tree ./application/views/templates
 //= require_tree ./application/routers
 //= require_tree .

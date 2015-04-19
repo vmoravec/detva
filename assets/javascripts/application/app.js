@@ -1,8 +1,8 @@
 window.App = {
 
   config: {
-    api_url_prefix: '/api/v1/',
-    default_region_id: 'content'
+    api_url_prefix: "/api/v1/",
+    default_region_id: "content"
   },
 
   Collections: {},
