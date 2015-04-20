@@ -16,4 +16,4 @@ require_relative "websocket/app"
 
 use Rack::CommonLogger, logger if ENV["RACK_ENV"] == "production"
 
-run Rack::Cascade.new [Main, Assets, Api, WebsocketServer]
+run Rack::Cascade.new [Main, Assets, WebsocketServer, Api]
